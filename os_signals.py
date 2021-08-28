@@ -1,26 +1,30 @@
+# Import all relevant libraries that are needed
 import signal
 import os
 import time
 import sys
 
 
+# Function used to read the SIGHUP signal
 def readConfiguration(signalNumber, frame):
     print('(SIGHUP) reading configuration')
     return
 
 
+# Function to end the process
 def terminateProcess(signalNumber, frame):
     print('(SIGTERM) terminating the process')
     sys.exit()
 
 
+# Function to receive a signal from terminal
 def receiveSignal(signalNumber, frame):
     print('Received:', signalNumber)
     return
 
 
+# Register the signals that are to be caught
 if __name__ == '__main__':
-    # register the signals to be caught
     signal.signal(signal.SIGHUP, readConfiguration)
     signal.signal(signal.SIGINT, receiveSignal)
     signal.signal(signal.SIGQUIT, receiveSignal)
@@ -37,10 +41,10 @@ if __name__ == '__main__':
     signal.signal(signal.SIGALRM, receiveSignal)
     signal.signal(signal.SIGTERM, terminateProcess)
 
-    # output current process ID
+    # Output current process ID
     print('My PID is:', os.getpid())
 
-    # wait in an endless loop for signals
+    # Wait in an endless loop for signals
     while True:
         print('waiting...')
-        time.sleep(3)
+        time.sleep(5)
