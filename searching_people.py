@@ -21,6 +21,7 @@ for line in lines:
     people.append(person)
 
 
+# Linear search function
 def linearSearch(people, searchString):
     for i in range (len(people)):
         if people[i].lastname == searchString:
@@ -28,9 +29,11 @@ def linearSearch(people, searchString):
     return -1
 
 
+# Perform a linear search for the lastname 'Pezzini'. This action is timed further down.
 linearSearch(people, 'Pezzini')
 
 
+# Binary search function
 def binarySearch(people, searchString):
     first = 0
     last = len(people)-1
@@ -47,9 +50,11 @@ def binarySearch(people, searchString):
     return print(people[index])
 
 
+# Perform a binary search for the lastname 'Pennyworth'. Thsi action is timed further down
 binarySearch(people, 'Pennyworth')
 
 
+# Python search function
 def pythonSearch(people, searchString):
     for person in people:
         if searchString in person.lastname:
@@ -57,10 +62,13 @@ def pythonSearch(people, searchString):
     return -1
 
 
+# Perform a python search for 'Palmer'. This action is timed in the next section.
 pythonSearch(people, 'Palmer')
 
 
-
+# Timing sections
+# Take a note when the action starts and when it finishes, then minus the difference
+# and print to the console. Perform this for all three search types.
 print("\n")
 start = time.perf_counter()
 linearSearch(people, 'Pezzini')

@@ -3,9 +3,9 @@ from person import Person
 import time
 
 # These are the small, medium and large data files that we will be reading as our sample
-fileref = open("smallData.dat", "r") # r is for read
-# fileref = open("mediumData.dat", "r") # r is for read
-# fileref = open("largeData.dat", "r") # r is for read
+#fileref = open("smallData.dat", "r") # r is for read
+#fileref = open("mediumData.dat", "r") # r is for read
+fileref = open("largeData.dat", "r") # r is for read
 
 # The next section reads in the data, then transforms the data into
 # a readable version that Python can handle.

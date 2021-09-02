@@ -22,13 +22,15 @@ for line in lines:
 
 class Node:
 
+    # Initiate the function
     def __init__(self, data):
         self.left = None
         self.right = None
         self.data = data
 
+    # Function to sort and insert new data. This will sort alphabetically based on first name.
     def insert(self, data):
-        # compare the new value with the parent node
+        # Compare the new value with the parent node
         if self.data:
             if data.firstname < self.data.firstname:
                 if self.left is None:
@@ -43,7 +45,7 @@ class Node:
         else:
             self.data = data
 
-    # print the tree
+    # Print the binary tree to the console
     def PrintTree(self):
         if self.left:
             self.left.PrintTree()
@@ -52,10 +54,12 @@ class Node:
             self.right.PrintTree()
 
 
+# Build the node and insert the persons from the people list stated above
 root = Node(people[0])
 for person in people:
     root.insert(person)
 
+# Test that the tree is inserting correctly by adding additional people to the list
 root.insert(Person('Jeremy', 'Landolfo', '19 Ivy Leaf rd', 'PAKENHAM', 'VIC', '3810'))
 root.insert(Person('Cos', 'Chiera', '123 Fake Street', 'FRANKSTON', 'VIC', '3199'))
 root.PrintTree()

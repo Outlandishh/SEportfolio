@@ -20,8 +20,8 @@ for line in lines:
     people.append(person)
 
 
-# Create a people dictionary consisting of every
-# person in the person class, then hash this value.
+# Create a people dictionary consisting of every person
+# in the person class, then make a hash of this value.
 people_dict = {}
 for person in people:
     people_dict[hash(person)] = person

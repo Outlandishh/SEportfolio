@@ -1,5 +1,6 @@
-class Person():
-    #This is the constructor
+class Person:
+
+    # This is the constructor for the Person class
     def __init__(self, firstname, lastname, street, city, state, postcode):
         self.firstname = firstname
         self.lastname = lastname
@@ -8,7 +9,7 @@ class Person():
         self.state = state
         self.postcode = postcode
 
-    #method
+    # Functions for identifying the elements of a person
         def getFirstName(self):
             return self.firstname
 
@@ -27,5 +28,6 @@ class Person():
         def getPostcode(self):
             return self.postcode
 
+    # Define the format the the array will have
     def __str__(self):
         return '{}, {}, {}, {}, {}, {}'.format(self.firstname, self.lastname, self.street, self.city, self.state, self. postcode)
